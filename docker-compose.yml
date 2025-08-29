@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  agent-service:
+    build:
+      context: .
+      dockerfile: ./.docker/Dockerfile
+    container_name: ai-hr-backend
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config.yaml:/etc/ai-hr-backend/config.yaml
